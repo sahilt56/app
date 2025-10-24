@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Dark Mode Styles --- */
+
+/* Apply base dark background to body when .dark is present */
+.dark body,
+.dark { /* Target the main div with .dark too */
+  background-color: #1f2937; /* gray-800 */
+  color: #e5e7eb; /* gray-200 - Default text color */
+}
+
+/* --- Sidebar Dark Overrides --- */
+
+/* Elements that are normally bg-white */
+.dark .bg-white {
+  background-color: #1f2937; /* gray-800 */
+}
+/* Elements that are normally bg-gray-50 */
+.dark .bg-gray-50 {
+   background-color: #374151; /* gray-700 */
+}
+/* Elements that normally have border-r */
+.dark .border-r {
+   border-color: #374151; /* gray-700 */
+}
+/* Elements that normally have border-b */
+.dark .border-b {
+  border-color: #374151; /* gray-700 */
+}
+/* Text that is normally gray-900 */
+.dark .text-gray-900 {
+  color: #e5e7eb; /* gray-200 */
+}
+/* Text that is normally gray-800 */
+.dark .text-gray-800 {
+   color: #f3f4f6; /* gray-100 */
+}
+/* Text that is normally gray-600 or gray-500 */
+.dark .text-gray-600,
+.dark .text-gray-500 {
+  color: #9ca3af; /* gray-400 */
+}
+/* Icons that are normally gray-600 or gray-500 */
+.dark .text-gray-600 svg,
+.dark .text-gray-500 svg {
+    color: #9ca3af; /* gray-400 */
+}
+/* Hover states that are normally hover:bg-gray-50 */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #374151; /* gray-700 */
+}
+/* Active states that are normally active:bg-gray-100 */
+.dark .active\:bg-gray-100:active {
+    background-color: #4b5563; /* gray-600 */
+}
+/* Selected chat item background (normally bg-gray-100 or bg-gray-50) */
+.dark .bg-gray-100, /* Target the selected class */
+.dark .bg-gray-50 {
+    background-color: #374151; /* gray-700 */
+}
+
+/* --- Chat Window Dark Overrides --- */
+
+/* Header background (normally bg-gray-100) */
+/* .dark .bg-gray-100 {  Already covered above */
+/* background-color: #1f2937; /* gray-800 */
+/* } */
+
+/* Messages area background */
+.dark .bg-\[\#e5ddd5\] { /* Target the specific light mode background color */
+  background-color: #111827; /* gray-900 */
+  background-image: none; /* Remove the light SVG pattern */
+}
+
+/* Incoming message bubble (normally bg-white) */
+/* .dark .bg-white { Already covered above */
+/* background-color: #374151; /* gray-700 */
+/* } */
+
+/* Outgoing message bubble */
+.dark .bg-\[\#d9fdd3\] { /* Target the specific light mode background color */
+  background-color: #115e59; /* teal-800 */
+}
+
+/* Message text (if it needs overriding, e.g., if default dark text isn't good) */
+/* .dark .text-sm { color: #f3f4f6; } */ /* Usually handled by body color */
+
+/* Message time text (normally text-gray-500) */
+/* .dark .text-gray-500 { Already covered above */
+/* color: #9ca3af; /* gray-400 */
+/* } */
+
+/* Input area background (normally bg-gray-100) */
+/* .dark .bg-gray-100 { Already covered above */
+/* background-color: #1f2937; /* gray-800 */
+/* } */
+
+/* Input field (normally bg-white) */
+/* .dark .bg-white { Already covered above */
+/* background-color: #374151; /* gray-700 */
+/* } */
+
+/* Input field text */
+.dark .flex-1.px-4.py-2.bg-white { /* More specific selector for input */
+    color: #d1d5db; /* gray-300 */
+}
+
+/* Input field placeholder */
+.dark .placeholder\:text-gray-500::placeholder { /* Adjust if needed */
+  color: #6b7280; /* gray-500 */
+}
+
+/* Icons in input area (normally text-gray-600) */
+/* .dark .text-gray-600 svg { Already covered above */
+/* color: #9ca3af; /* gray-400 */
+/* } */
+
+/* --- Dropdown Menu Dark Overrides --- */
+.dark .divide-gray-100 {
+    border-color: #374151; /* gray-700 */
+}
+/* .dark .bg-white { Already covered above } */
+.dark .ring-black {
+    --tw-ring-color: #374151; /* gray-700 */
+}
+.dark .text-gray-900 {
+    color: #e5e7eb; /* gray-200 */
+}
+.dark .text-gray-400 {
+    color: #6b7280; /* gray-500 */
+}
+/* Active menu item */
+.dark .group:hover .text-gray-900, /* Adjust based on your active state logic */
+.dark button[data-headlessui-state="active"] {
+   /* You might need specific selectors if Headless UI adds attributes */
+   /* background-color: #1d4ed8; /* Example: blue-700 */
+   /* color: white; */
+}
+.dark .bg-teal-500 { /* Active teal state */
+    /* Keep this? Or change active color for dark mode? */
+}
+.dark .bg-red-500 { /* Active red state */
+     /* Keep this? */
+}
+
+
+/* --- Login Screen Dark Overrides --- */
+.dark .bg-gradient-to-br.from-teal-500.to-teal-700 {
+    /* Maybe make it darker? Example: */
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+    --tw-gradient-from: #0f766e; /* teal-700 */
+    --tw-gradient-to: #134e4a; /* teal-900 */
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+/* .dark .bg-white { Already covered } */
+/* .dark .text-gray-800 { Already covered } */
+/* .dark .text-gray-600 { Already covered } */
+.dark .border-gray-300 {
+    border-color: #4b5563; /* gray-600 */
+}
+.dark input:focus { /* Adjust focus ring if needed */
+   /* border-color: #5eead4; /* teal-300 */
+   /* ring-color: #5eead4; /* teal-300 */
+}
+.dark .text-teal-600 {
+    color: #5eead4; /* teal-300 */
+}
+
+
+/* --- Reset Password Screen Dark Overrides --- */
+/* Similar overrides as Login Screen */
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+} */
+/* a:hover {
+  color: #535bf2;
+} */
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+/* h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
